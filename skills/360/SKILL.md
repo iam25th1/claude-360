@@ -139,7 +139,13 @@ After printing the review, build this JSON:
 }
 ```
 
-Write to `/tmp/claude-360-review.json` and run:
+## Environment Detection
+
+After printing the review text, generate the shareable card. How you do this depends on where you're running:
+
+### If running in Claude Code (terminal)
+
+Write the JSON to `/tmp/claude-360-review.json` and run:
 
 ```bash
 node ~/.claude/skills/iam25th1__claude-360/scripts/generate-review.js /tmp/claude-360-review.json
@@ -152,3 +158,29 @@ node ~/.claude/plugins/claude-360/scripts/generate-review.js /tmp/claude-360-rev
 ```
 
 Tell the user their card is at `~/.claude-360/`.
+
+### If running in claude.ai (chat interface)
+
+You have access to file creation tools. Generate the card directly:
+
+1. Write the review JSON to `/tmp/claude-360-review.json`
+2. Copy `/mnt/skills/user/three-sixty/../../scripts/generate-review.js` to `/home/claude/` and run it against the JSON. If the script isn't available, build the HTML card inline using the template rules below.
+3. Save the HTML to `/mnt/user-data/outputs/`
+4. If playwright is available, screenshot it to PNG too
+5. Present the files to the user
+
+If the generator script isn't reachable, build the card as a React artifact (.jsx) or raw HTML with this design:
+
+- Square 1:1 ratio, max-width 540px
+- Dark background (#0D0D11) with subtle grain texture
+- Top/bottom accent line using rating color (green #34D399 for 4.5+, blue #60A5FA for 3.5+, yellow #FBBF24 for 2.5+, red #F87171 below)
+- Header: "Claude-360" + "Performance Review" left, date/duration right
+- Employee name large + big score number with /5 suffix
+- Rating label badge with colored border
+- 7 category rows: name, colored progress bar (green #34D399 for 4+, yellow #FBBF24 for 3, red #F87171 for 1-2), score number
+- Side by side: "A Word From Your AI" (left, blue accent #60A5FA, italic text) + "AI Takeover" survival box (right, survival-colored, scan line overlay, big percentage, verdict word, reason line)
+- Quote of Concern/Excellence with vertical rotated label, colored left border, quote text large, context small
+- Footer: "Claude" italic signature, "Senior AI Partner", version "claude-360 v1.0"
+- Fonts: monospace for labels/metadata, system sans-serif for values/names
+
+The card must screenshot cleanly as a single square image for Twitter/X.

@@ -22,29 +22,35 @@ Every review is unique. Every review is honest. No participation trophies.
 
 ## Install
 
+### Claude Code (terminal)
+
 ```bash
 claude skills add iam25th1/claude-360
 ```
 
+### Claude.ai (chat)
+
+Go to **Settings > Profile > Skills**, upload the `SKILL.md` file from `skills/360/SKILL.md`.
+
 ### Optional: Plugin mode (adds idle nudge)
 
-If you want Claude to nudge you with `run /360 if you're brave enough.` when it goes idle:
+If you want Claude to nudge you with `run /360 if you're brave enough.` when it goes idle in Claude Code:
 
 ```bash
 git clone https://github.com/iam25th1/claude-360.git ~/.claude/plugins/claude-360
 ```
 
-Plugin mode includes the same skill plus a notification hook. The skill install is all most people need.
-
 ## Usage
 
-At any point during or at the end of a session:
+In Claude Code or claude.ai:
 
 ```
 /360
 ```
 
-Claude analyzes the full session, prints your review in the terminal, then generates a shareable HTML card at `~/.claude-360/`.
+**In Claude Code:** Claude prints the review in your terminal, generates an HTML card at `~/.claude-360/`, and opens it in your browser.
+
+**In claude.ai:** Claude prints the review in chat and generates a shareable card as a downloadable file.
 
 ## Demo
 

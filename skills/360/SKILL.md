@@ -1,5 +1,5 @@
 ---
-name: claude-360
+name: three-sixty
 description: "Run /360 to get a brutally honest, corporate-style performance review of your prompting skills. Includes category scores, a personal note from Claude, an AI takeover survival rating, and a shareable card."
 command: /360
 ---

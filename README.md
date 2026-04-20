@@ -38,7 +38,7 @@ Plugin mode includes the same skill plus a notification hook. The skill install 
 
 ## Usage
 
-At any point during or at the end of a Claude Code session:
+At any point during or at the end of a session:
 
 ```
 /360

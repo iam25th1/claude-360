@@ -1,0 +1,15 @@
+{
+  "name": "claude-360",
+  "version": "1.0.0",
+  "description": "Claude reviews YOUR performance. Brutally honest 360 reviews of your prompting skills.",
+  "author": "25thprmr",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iam25th1/claude-360"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-review.js",
+    "demo": "node scripts/generate-review.js sample-review.json"
+  }
+}

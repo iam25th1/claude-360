@@ -1,0 +1,21 @@
+{
+  "name": "claude-360",
+  "version": "1.0.0",
+  "description": "Claude reviews YOUR performance. Brutally honest, corporate-style 360 reviews of your prompting skills.",
+  "author": "25thprmr",
+  "homepage": "https://github.com/iam25th1/claude-360",
+  "commands": ["commands/360.md"],
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n\\033[2m[claude-360] run /360 if you\\'re brave enough.\\033[0m'"
+          }
+        ]
+      }
+    ]
+  }
+}

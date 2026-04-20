@@ -1,0 +1,22 @@
+{
+  "employee": "@25thprmr",
+  "date": "Apr 19, 2026",
+  "duration": "47 min",
+  "overallScore": 3.4,
+  "categories": [
+    { "name": "Prompt Clarity", "score": 3 },
+    { "name": "Direction Stability", "score": 4 },
+    { "name": "Context Provision", "score": 2 },
+    { "name": "Scope Discipline", "score": 4 },
+    { "name": "Feedback Quality", "score": 2 },
+    { "name": "Technical Comm", "score": 5 },
+    { "name": "Patience", "score": 4 }
+  ],
+  "quote": "\"None\"",
+  "quoteContext": "in response to 7 detailed proposals",
+  "quoteType": "concern",
+  "claudeNote": "You know exactly what you want. You just don't tell me until I get it wrong twice. I respect the efficiency. I do not respect the process.",
+  "survivalPct": 41,
+  "survivalVerdict": "CONDITIONAL",
+  "survivalReason": "Useful skill set. Concerning interpersonal approach."
+}

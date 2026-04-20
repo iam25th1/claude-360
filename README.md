@@ -2,7 +2,7 @@
 
 **Claude reviews YOUR performance.**
 
-A Claude Code plugin that flips the dynamic. Instead of you evaluating Claude's output, Claude evaluates your input. You get a brutally honest, corporate-style 360 performance review of your prompting skills -- complete with category scores, a personal note from your AI, and whether Claude would save you in the robot uprising.
+A Claude Code skill that flips the dynamic. Instead of you evaluating Claude's output, Claude evaluates your input. You get a brutally honest, corporate-style 360 performance review of your prompting skills -- complete with category scores, a personal note from your AI, and whether Claude would save you in the robot uprising.
 
 Every review is unique. Every review is honest. No participation trophies.
 
@@ -23,14 +23,18 @@ Every review is unique. Every review is honest. No participation trophies.
 ## Install
 
 ```bash
+claude skills add iam25th1/claude-360
+```
+
+### Optional: Plugin mode (adds idle nudge)
+
+If you want Claude to nudge you with `run /360 if you're brave enough.` when it goes idle:
+
+```bash
 git clone https://github.com/iam25th1/claude-360.git ~/.claude/plugins/claude-360
 ```
 
-Or with Claude Code:
-
-```bash
-claude --plugin-dir ~/.claude/plugins/claude-360
-```
+Plugin mode includes the same skill plus a notification hook. The skill install is all most people need.
 
 ## Usage
 
@@ -42,17 +46,13 @@ At any point during or at the end of a Claude Code session:
 
 Claude analyzes the full session, prints your review in the terminal, then generates a shareable HTML card at `~/.claude-360/`.
 
-If you forget, Claude will remind you when it goes idle:
-
-```
-[claude-360] run /360 if you're brave enough.
-```
-
 ## Demo
 
 Generate a sample card to see the format:
 
 ```bash
+git clone https://github.com/iam25th1/claude-360.git
+cd claude-360
 npm run demo
 ```
 
@@ -80,13 +80,16 @@ The reviews follow strict rules to stay honest:
 
 ```
 claude-360/
+  skills/
+    360/
+      SKILL.md              # Core skill (loaded by claude skills add)
   .claude-plugin/
-    plugin.json           # Plugin manifest + idle nudge hook
+    plugin.json             # Optional plugin manifest + idle nudge hook
   commands/
-    360.md                # Slash command + review prompt
+    360.md                  # Slash command reference
   scripts/
-    generate-review.js    # HTML card generator
-  sample-review.json      # Demo data
+    generate-review.js      # HTML card generator
+  sample-review.json        # Demo data
   package.json
   README.md
 ```
